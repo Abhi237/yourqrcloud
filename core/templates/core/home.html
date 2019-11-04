@@ -1,0 +1,18 @@
+{% extends "core/index.html" %}
+{% block content %}
+                      <div class="h-100 justify-content-center align-items-center">
+                      <h1 class="h1-seo col-lg-12">Your•QR•Cloud</h1>
+                      <h3>Looks like you scanned a QR code!<br/> Enter the security key to Continue.</h3>
+                        <form method="POST" action="/clipboard/">{% csrf_token %}
+                      <div class="col-sm-12 offset-lg-3 col-lg-6">
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="key" placeholder="Enter Security Code">
+                          <div class="input-group-append">
+                            <span class="input-group-text"><i class="tim-icons icon-lock-circle"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary btn-round" type="submit">Submit</button>
+                      </form></div>
+                      {% endblock content %}
+
